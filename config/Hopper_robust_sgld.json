@@ -1,0 +1,71 @@
+{
+    "env_id": "Hopper-v2",
+    "training_config": {
+        "critic_lr": 0.0001,
+        "robust_params": {
+            "enabled": true,
+            "strategy": [
+                "actor_l2_reg",
+                "use_sgld"
+            ],
+            "strategy_opts": {
+                "actor_reg": 1000.0
+            },
+            "eps_scheduler": {
+                "end": 0.075
+            }
+        }
+    },
+    "test_config": {
+        "attack_params": {
+            "eps": 0.075,
+            "sarsa_action_ratio": 0.75
+        },
+        "sarsa_params": {
+            "sarsa_reg": 0.3,
+            "action_eps_scheduler": {
+                "end": 0.05
+            }
+        }
+    },
+    "data_config": {
+        "method": "mean_std",
+        "state_mean": [
+            1.41378,
+            -0.04679,
+            -0.11059,
+            -0.25309,
+            -0.10837,
+            2.25122,
+            0.03333,
+            -0.0194,
+            -0.02057,
+            -0.00411,
+            -0.1908
+        ],
+        "state_std": [
+            0.1754,
+            0.11278,
+            0.14041,
+            0.33625,
+            0.64338,
+            0.68419,
+            1.42197,
+            1.98514,
+            1.86178,
+            3.73027,
+            5.39772
+        ],
+        "action_mean": [
+            0.19111,
+            0.40505,
+            -0.19213
+        ],
+        "action_std": [
+            0.60057,
+            0.70842,
+            0.79983
+        ]
+    },
+    "__comment__": "See defaults.json for all parameters."
+}

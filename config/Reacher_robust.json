@@ -1,0 +1,64 @@
+{
+    "env_id": "Reacher-v2",
+    "training_config": {
+        "robust_params": {
+            "enabled": true,
+            "strategy_opts": {
+                "actor_reg": 1.0
+            },
+            "eps_scheduler": {
+                "end": 1.5
+            }
+        }
+    },
+    "test_config": {
+        "attack_params": {
+            "eps": 1.5,
+            "sarsa_action_ratio": 0.9997
+        },
+        "sarsa_params": {
+            "sarsa_reg": 0.3,
+            "action_eps_scheduler": {
+                "end": 0.02
+            }
+        }
+    },
+    "data_config": {
+        "method": "mean_std",
+        "state_mean": [
+            0.51442,
+            0.2055,
+            -0.06737,
+            0.20945,
+            0.00152,
+            0.01224,
+            -0.10898,
+            0.68776,
+            0.04133,
+            -0.00326,
+            0.0
+        ],
+        "state_std": [
+            0.51411,
+            0.6652,
+            0.68302,
+            0.68659,
+            0.10219,
+            0.09372,
+            2.33258,
+            2.84605,
+            0.08844,
+            0.04629,
+            0.0
+        ],
+        "action_mean": [
+            -0.00206,
+            0.00413
+        ],
+        "action_std": [
+            0.09547,
+            0.09637
+        ]
+    },
+    "__comment__": "See defaults.json for all parameters."
+}

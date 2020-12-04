@@ -1,0 +1,88 @@
+{
+    "env_id": "Walker2d-v2",
+    "training_config": {
+        "robust_params": {
+            "enabled": true,
+            "strategy": [
+                "actor_l2_reg",
+                "use_sgld"
+            ],
+            "strategy_opts": {
+                "actor_reg": 1000.0
+            },
+            "eps_scheduler": {
+                "end": 0.05
+            }
+        }
+    },
+    "test_config": {
+        "attack_params": {
+            "eps": 0.05,
+            "sarsa_action_ratio": 0.99
+        },
+        "sarsa_params": {
+            "sarsa_reg": 1.0,
+            "action_eps_scheduler": {
+                "end": 0.2
+            }
+        }
+    },
+    "data_config": {
+        "method": "mean_std",
+        "state_mean": [
+            1.08525,
+            -0.32155,
+            -0.52457,
+            -1.02031,
+            0.12581,
+            -0.68972,
+            -1.03927,
+            0.53128,
+            2.91889,
+            -0.08261,
+            -0.32553,
+            -0.79527,
+            0.02404,
+            -0.43864,
+            -0.72127,
+            -0.0964,
+            -0.5398
+        ],
+        "state_std": [
+            0.13474,
+            0.40076,
+            0.66878,
+            0.9781,
+            0.82149,
+            0.75845,
+            1.14089,
+            0.62119,
+            1.92261,
+            1.14501,
+            5.47682,
+            5.55444,
+            6.33212,
+            5.70683,
+            5.52888,
+            6.28093,
+            5.56576
+        ],
+        "action_mean": [
+            0.32448,
+            0.36651,
+            0.46716,
+            0.32888,
+            0.13982,
+            0.28057
+        ],
+        "action_std": [
+            0.76553,
+            0.82068,
+            0.77841,
+            0.80504,
+            0.8253,
+            0.91188
+        ]
+    },
+    "__comment__": "See defaults.json for all parameters."
+}

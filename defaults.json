@@ -1,0 +1,115 @@
+{
+    "env_id": "",
+    "models_path": "./ddpg_{env_id}/",
+    "noise_sigma": 0.0,
+    "training_config": {
+        "pretrain_path": "",
+        "batch_size": 64,
+        "actor_network": [
+            400,
+            300
+        ],
+        "critic_network": [
+            400,
+            300
+        ],
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "num_frames": 2000000.0,
+        "eval_interval": 10000,
+        "eval_episodes": 20,
+        "print_frame": 100,
+        "profile_time": false,
+        "save_frame": 20000.0,
+        "gamma": 0.99,
+        "reward_scaling": 1.0,
+        "target_network_mix": 0.001,
+        "show_game": false,
+        "buffer_params": {
+            "replay_initial": 10000.0,
+            "buffer_capacity": 1000000.0
+        },
+        "robust_params": {
+            "enabled": false,
+            "use_full_backward": false,
+            "strategy": [
+                "actor_l2_reg"
+            ],
+            "strategy_opts": {
+                "actor_reg": 3.0,
+                "critic_reg": 0.01,
+                "sgld_steps": 5,
+                "adv_ratio": 1.0
+            },
+            "advtrain_scheduler": {
+                "start": "auto",
+                "end": "auto",
+                "steps": 500000,
+                "start_step": 1000000.0
+            },
+            "eps_scheduler": {
+                "start": 0.0,
+                "end": 0.1,
+                "steps": 500000.0,
+                "start_step": 1000000.0
+            },
+            "beta_scheduler": {
+                "start": 1.0,
+                "end": 0.0,
+                "steps": "auto",
+                "start_step": "auto"
+            }
+        }
+    },
+    "test_config": {
+        "eval_episodes": 50,
+        "show_game": false,
+        "save_frame": false,
+        "certify": false,
+        "verbose": false,
+        "noise_sigma": 0.0,
+        "attack_params": {
+            "enabled": false,
+            "alpha": "auto",
+            "type": "critic",
+            "iteration": 10,
+            "sarsa_action_ratio": 0.5
+        },
+        "sarsa_params": {
+            "num_steps": 30000.0,
+            "sample_size": 100000.0,
+            "sarsa_reg": 1.0,
+            "target_network_mix": 0.01,
+            "eps_scheduler": {
+                "start": 0.0,
+                "end": 0,
+                "steps": 10000.0,
+                "start_step": 10000.0
+            },
+            "beta_scheduler": {
+                "start": 1.0,
+                "end": 0.0,
+                "steps": 10000.0,
+                "start_step": 10000.0
+            },
+            "action_eps_scheduler": {
+                "start": 0,
+                "end": 0.3,
+                "steps": 10000.0,
+                "start_step": 10000.0
+            }
+        },
+        "certify_params": {
+            "enabled": false,
+            "use_full_backward": false,
+            "eps": "auto"
+        }
+    },
+    "data_config": {
+        "method": "none",
+        "state_space_range": [],
+        "state_mean": [],
+        "state_std": []
+    },
+    "models": {}
+}

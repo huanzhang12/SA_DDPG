@@ -1,0 +1,6 @@
+[submodule "baselines.git"]
+	path = baselines.git
+	url = https://github.com/openai/baselines.git
+[submodule "auto_LiRPA.git"]
+	path = auto_LiRPA.git
+	url = https://github.com/KaidiXu/auto_LiRPA.git

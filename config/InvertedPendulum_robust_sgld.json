@@ -1,0 +1,51 @@
+{
+    "env_id": "InvertedPendulum-v2",
+    "training_config": {
+        "robust_params": {
+            "enabled": true,
+            "strategy": [
+                "actor_l2_reg",
+                "use_sgld"
+            ],
+            "strategy_opts": {
+                "actor_reg": 1.0
+            },
+            "eps_scheduler": {
+                "end": 0.3
+            }
+        }
+    },
+    "test_config": {
+        "attack_params": {
+            "eps": 0.3,
+            "sarsa_action_ratio": 0.9999
+        },
+        "sarsa_params": {
+            "sarsa_reg": 10.0,
+            "action_eps_scheduler": {
+                "end": 0.15
+            }
+        }
+    },
+    "data_config": {
+        "method": "mean_std",
+        "state_mean": [
+            -0.50623,
+            -0.00164,
+            -0.01286,
+            -3e-05
+        ],
+        "state_std": [
+            0.07061,
+            0.02101,
+            0.1186,
+            0.10751
+        ],
+        "action_mean": [
+            -0.00017
+        ],
+        "action_std": [
+            0.09897
+        ]
+    }
+}
